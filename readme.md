@@ -2,9 +2,7 @@
 <h1>Disciplina: Tecnologia da Informação III - ETEC</h1>
 <p>Repositório para atividades estudadas e desenvolvidas ao longo do 3° semestre.</p>
 </div>
-
 <br>
-
 <div align="center">
 <a href="https://github.com/monicaquintal" target="_blank"><img align="right" height="100" src="https://observatoriodabicicleta.org.br/uploads/2020/09/bancos-de-dados-nova-600.png" /></a>
 <h2>Estudando Banco de Dados</h2>
