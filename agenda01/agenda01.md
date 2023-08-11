@@ -68,3 +68,45 @@ select @t1:=(@t2:=1)+@t3:=4,@t1,@t2,@t3;
 parâmetros e retornar valores.
 
 ## Usar ou não usar Stored Procedures:
+
+### Contexto do exemplo:
+- O funcionário faz uma solicitação de manutenção de um ou vários equipamentos;
+- A solicitação permanece com status “SOLICITADA” até ser liberada;
+- O responsável pelo setor de engenharia libera a solicitação, agendando a manutenção.
+
+Neste caso, uma saída seria a criação de um processo de liberação de solicitação, pois nenhum agendamento de manutenção de equipamento é realizado enquanto a solicitação não for liberada.
+<br>
+Passos:
+
+- Atualização do status da solicitação;
+- Atualização do status dos equipamentos da solicitação;
+- Agendar manutenção dos equipamentos.
+
+> Há pelo menos três instruções de atualização e/ou inserção. Poderíamos agrupar essas três instruções no corpo de um procedimento e chamá-lo a partir da aplicação uma única vez. As ações de update/insert/delete, a partir daí, ficariam por conta do servidor.
+
+Pontos positivos | Pontos negativos
+-----------------|------------------
+- Simplificação da execução de instruções SQL pela aplicação.<br>- Transferência de parte da responsabilidade de processamento para o servidor.<br>- Facilidade na manutenção, reduzindo a quantidade de alterações na aplicação. | - Necessidade de maior conhecimento da sintaxe do banco de dados para escrita de rotinas em SQL.<br>- As rotinas ficam mais facilmente acessíveis. Alguém que tenha acesso ao banco poderá visualizar e alterar o código.
+
+## Criando e invocando Stored Procedures no MySQL:
+
+### Sintaxe para criação de Stored Procedures no MySQL:
+
+~~~sql
+delimiter $$
+create procedure nome_procedimento ([parâmetros])
+begin
+ /*corpo do procedimento*/
+end $$
+delimiter ;
+~~~
+
+Observações:
+- nome_procedimento: nome que identificará o procedimento armazenado;segue as mesmas regras para definição de variáveis, não podendo iniciar com número ou caracteres especiais (exceto o underline “_”).
+- parâmetros: são opcionais e, caso não sejam necessários, devem permanecer apenas os parênteses vazios na declaração do procedure. Para que um procedimento receba parâmetros, é necessário utilizar a seguinte sintaxe (dentro dos parênteses):
+
+### Sintaxe de declaração de parâmetros em Stored Procedures:
+
+~~~sql
+(modo nome tipo, modo nome tipo, modo nome tipo)
+~~~
