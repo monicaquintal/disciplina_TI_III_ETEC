@@ -110,3 +110,78 @@ Observações:
 ~~~sql
 (modo nome tipo, modo nome tipo, modo nome tipo)
 ~~~
+
+- nome: nome do parâmetro, segue as mesmas regras de definição de variáveis.
+- tipo: tipo de dado do parâmetro (int, varchar, decimal, etc).
+- modo: indica a forma como o parâmetro será tratado no procedimento, se será apenas um dado de entrada, de saída ou ambas as funções. Os valores possíveis para o modo são:
+  - in: indica que o parâmetro é apenas para entrada/recebimento de dados, não podendo ser usado para retorno.
+  - out: para parâmetros de saída. Para esse tipo não pode ser informado um valor direto (como ‘teste’, 1 ou 2.3), deve ser passada uma variável “por referência”.
+  - inout: usado para os dois fins (entrada e saída de dados). Nesse caso também deve ser informada uma variável e não um valor direto.
+
+### Uso do comando `delimiter`:
+
+- por padrão o MySQL utiliza o sinal de ponto e vírgula como delimitador de comandos, separando as instruções a serem executadas. 
+- porém, dentro do corpo do Stored Procedure será necessário separar algumas instruções internamente utilizando esse mesmo sinal, por isso é preciso inicialmente ***alterar o delimitador padrão do MySQL*** (para `$$`) e ao fim da criação do procedimento, restaurar seu valor padrão.
+
+### Sintaxe para chamar um Stored Procedure:
+
+~~~sql
+call nome_procedimento([parâmetros]);
+~~~
+
+## Aplicando exemplos
+
+1. Download do script de criação do banco de dados minimercado:
+
+~~~sql
+create database minimercado;
+
+use minimercado;
+
+create table cliente (
+  cpf_cliente varchar(11) not null,
+  nome varchar(80) not null,
+  endereco varchar(80) not null,
+  primary key (cpf_cliente)
+);
+
+insert into cliente values ('11122233370','manuel barbosa','avenida rui barbosa, nÃºmero 435, jardim aeroporto, sÃ£o paulo'),('22233344480','joana nascimento','avenida 7, numero 1765, alvorada, sÃ£o paulo'),('44422211110','leandro goes','alameda 25, nÃºmero 324, fortaleza, sÃ£o paulo'),('55588833320','carlos lacerda','travessa milÃªnio, nÃºmero 134, celina, sÃ£o paulo'),('77766699940','paulo carvalho','praÃ§a centenÃ¡rio, nÃºmero 500, california, sÃ£o paulo');
+
+create table produto (
+  codigo_produto int(5) not null auto_increment,
+  descricao varchar(40) not null,
+  quantidade_estoque double(10,1) not null default '0.0',
+  primary key (codigo_produto)
+); 
+
+insert into produto values (1,'arroz pct 5 kg',100.0),(2,'feijÃ£o pct 2 kg',50.0),(3,'macarrÃ£o pct 1 kg',80.0),(4,'molho de tomate',40.0),(5,'sal pct 500 gr',100.0);
+
+create table compra (
+  codigo_compra int(11) not null auto_increment,
+  data date not null,
+  cpf_cliente varchar(11) not null,
+  primary key (codigo_compra),
+  key fk_compra_cpf_cliente (cpf_cliente),
+  constraint fk_compra_cpf_cliente foreign key (cpf_cliente) references cliente (cpf_cliente)
+);
+
+insert into compra values (1,'2019-10-01','77766699940'),(2,'2019-10-10','44422211110');
+
+create table compra_produto (
+  id_compra_produto int(11) not null auto_increment,
+  codigo_compra int(11) not null,
+  codigo_produto int(5) not null,
+  quantidade double(10,1) not null default '1.0',
+  preco double(10,2) not null,
+  primary key (id_compra_produto),
+  key fk_compprod_codigo_compra (codigo_compra),
+  key fk_compprod_codigo_produto (codigo_produto),
+  constraint fk_compprod_codigo_compra foreign key (codigo_compra) references compra (codigo_compra),
+  constraint fk_compprod_codigo_produto foreign key (codigo_produto) references produto (codigo_produto)
+); 
+
+insert into compra_produto values (1,1,1,2.0,8.90),(2,1,2,2.0,5.40),(3,2,3,1.0,2.45),(4,2,4,2.0,3.30),(5,2,5,1.0,4.70);
+~~~
+
+2. Executá-lo em uma janela do SQL Workbench.
+
