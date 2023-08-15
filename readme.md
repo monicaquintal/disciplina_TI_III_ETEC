@@ -13,3 +13,4 @@
 ## Conteúdo 💭
 
 1. [Agenda 01: Blocos de Linguagem de Consulta Estruturada.](./agenda01/agenda01.md)
+1. [Agenda 02: Funções.](./agenda02/agenda02.md)
