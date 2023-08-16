@@ -65,7 +65,7 @@ select nome_funcao([parâmetros]);
 
 > Para aplicar os exemplos, utilizado o BD minimercado, estudado na agenda anterior.
 
-### Exemplo 1:
+### [Exemplo 1](https://www.youtube.com/watch?v=DVdII76yiUg&feature=youtu.be):
 
 - função que receba dois valores inteiros e retorne o resultado da multiplicação entre eles:
 
@@ -79,6 +79,72 @@ begin
 end $$
 delimiter ;
 ~~~
+
+- chamando a função:
+
+~~~sql
+select fnc_multiplica (8, 10) resultado;
+~~~
+
+> Quando temos uma aplicação que faz um select por diversas vezes durante um código, é mais simples fazer uma futura mudança apenas na procedure ou function. Caso contrário, haverá uma amarração por variável no código, ou teria que percorre-lo por completo para fazer as trocas.
+
+### Exemplo 2:
+
+- na tabela compra_produto, há campos quantidade e preco; criar uma
+função que calcule o preço total a partir do conteúdo dos dois campos.
+
+~~~sql
+delimiter $$
+create function fnc_preco_total (vl_unitario double, quantidade double)
+returns double
+begin
+  set @r = vl_unitario * quantidade;
+  return @r;
+end $$
+delimiter ;
+~~~
+
+- após a criação da function, utilizá-la apresentando todos os produtos que foram vendidos com o preço total de cada venda, calculado por meio da function fnc_preco_total.
+
+~~~sql
+select cp.*
+    , fnc_preco_total(cp.preco, cp.quantidade) preco_total
+  from compra_produto cp
+~~~
+
+- importante: coluna preco_total é definida como `alias` (apelido) do retorno.
+
+### Exemplo 3: 
+
+- criar uma function para obter o valor total de um compra.
+
+~~~sql
+delimiter $$
+create function fnc_valor_compra (cod_compra int)
+returns double
+begin
+  declare total_compra double;
+  set total_compra = (select sum(fnc_preco_total(cp.quantidade, cp.preco))
+      from compra_produto cp
+      where cp.codigo_compra = cod_compra);
+  return total_compra;
+end $$
+delimiter ;
+~~~
+
+- para obter o total de uma compra, achamos o preço total de cada produto vendido, por meio da function fnc_preco_total, antes de acumular o valor a partir da function SUM, do SQL.
+
+~~~sql
+select fnc_valor_compra(1) total_compra;
+~~~
+Obs.: O número 1 é o parâmetro correspondente ao identificador da compra que se deseja obter o total, o que significa que somente os registros dessa compra serão considerados na execução da função.
+
+---
+
+## Você no comando:
+
+
+
 
 
 
