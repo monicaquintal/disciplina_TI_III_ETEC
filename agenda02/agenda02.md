@@ -143,6 +143,49 @@ Obs.: O número 1 é o parâmetro correspondente ao identificador da compra que 
 
 ## Você no comando:
 
+> Utilizar o banco de dados do consultório para desenvolver os exemplos.
+
+### Requisitos que deverão ser implementados na integração:
+1. Somente serão integrados os agendamentos recepcionados para realização de procedimentos de imagem.
+
+2. Valorizar o procedimento após a confirmação de sua realização de acordo com o convênio.
+
+### Criando as functions:
+
+> Situação 1:
+
+- a estrutura possui um campo tipo, preenchido com a letra I (procedimento de Imagem) ou C (Consulta), conforme demonstrado
+com o comando select.
+- criar uma function que receba o identificador do procedimento e retorne o seu tipo:
+
+~~~sql
+delimiter $$
+create function fnc_tipo_proc (cod_proc int)
+returns varchar(1)
+begin
+  declare tipo_proc varchar(1);
+  set tipo_proc = (select p.tipo
+    from procedimento p
+    where p.pro_id = cod_proc);
+return tipo_proc;
+end $$
+delimiter ;
+~~~
+
+- para executá-la:
+
+~~~sql
+select fnc_tipo_proc(1) tipo_procedimento;
+~~~
+
+- portanto, com a criação da function fnc_tipo_proc, quando necessitarmos verificar se um procedimento é de imagem, precisamos apenas chamá-la, passando como parâmetro o identificador do
+procedimento.
+
+> Situação 2:
+
+
+
+
 
 
 
