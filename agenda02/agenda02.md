@@ -183,9 +183,69 @@ procedimento.
 
 > Situação 2:
 
+- criar uma function específica de valorização do procedimento, centralizando a regra em um só lugar (criar uma function que receba o identificador do procedimento e do convênio e nos retorne o valor).
+
+~~~sql
+delimiter $$
+create function fnc_valor_proc (cod_proc int, cod_conv int)
+returns double
+begin
+  declare valor_proc double(10,2);
+  set valor_proc = (select p.valor
+    from convenio_procedimento_valor p
+    where p.pro_id = cod_proc
+    and p.convenio_id = cod_conv);
+  return valor_proc;
+end $$
+delimiter ;
+~~~
+
+- executando a função:
+
+~~~sql
+select fnc_valor_proc(1, 1) valor_procedimento;
+~~~
+
+> Melhorando o procedure confirmar_realizacao_exame, substituindo a consulta para obter o valor do procedimento pela function:
+
+~~~sql
+drop procedure if exists confirmar_realizacao_exame;
+--- exclui o procedimento anterior, de mesmo nome
+
+delimiter $$
+create procedure confirmar_realizacao_exame (in workl_id int)
+begin
+ select wa.agendamento_id
+--  , cpv.valor - Substituir a exibição do campo valor pela chamada da
+-- function func_valor_proc.
+  , fnc_valor_proc(a.pro_id, a.convenio_id) valor
+into @agend_id
+ , @valor
+ from worklist_aparelhos wa
+ inner join agendamento a on a.agendamento_id = wa.agendamento_id
+--  inner join convenio_procedimento_valor cpv
+-- on cpv.pro_id = a.pro_id
+-- and cpv.convenio_id = a.convenio_id
+-- Retirar a junção que era responsável por definir o valor do procedimento
+where wa.worklist_id = workl_id;
 
 
+update agendamento a
+ set a.realizado = 'S'
+ , a.valor = @valor
+where a.agendamento_id = @agend_id;
+end $$
+delimiter ;
+~~~
 
+- chamando a função:
+
+~~~sql
+select a.*
+ , fnc_valor_proc(a.pro_id, a.convenio_id) valor_receber
+ from agendamento a
+where a.realizado = 'N';
+~~~
 
 
 
