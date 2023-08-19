@@ -247,10 +247,17 @@ select a.*
 where a.realizado = 'N';
 ~~~
 
+---
 
+## Fichário
 
+IMPORTANTE: Utilizar o banco de dados imobiliária para resolver os exercícios.
 
+1. Desenvolva uma function que retorne o nome do síndico passando como parâmetro o identificador do síndico. Depois utilize a function criada para desenvolver uma instrução que apresente os dados dos condomínios (nome, endereço) e o nome do síndico de cada um deles.
 
+2. Desenvolva uma function que calcule o valor da taxa de condomínio a partir do valor do apartamento, passando como parâmetro o identificador do apartamento e o percentual aplicado ao valor para calcular a taxa. Depois utilize a function criada para desenvolver uma instrução que apresente os dados dos apartamentos (numero, valor) de um determinado condomínio e a taxa a ser paga.
+
+> Resolução [aqui](./monicaQuintal_agenda02_ti_iii.pdf).
 
 ---
 
