@@ -191,6 +191,7 @@ select * from produto;
 1. Quando devo incluir o registro na worklist do aparelho?<br>
 2. Quando devo confirmar a realização do exame?"<br>
 </em>
+<br>
 
 > O principal objetivo da fase de análise de um projeto é a coleta de requisitos. Esses requisitos devem ficar sempre à disposição da equipe desenvolvedora para que todas as soluções sejam definidas com base nas necessidades e regras de negócio do cliente, sem desvios de foco ou alteração de escopo. No caso do Consultório da Dra. Ana Lúcia, temos duas informações que nos ajudarão a auxiliar o Analista Carlos nesse novo desafio. São elas:
 
@@ -277,7 +278,7 @@ set w.integrado = 'S'
 where w.agendamento_id = 4;
 ~~~
 
-3. Retornar a realização do exame (passo que será realizado no Sistema dos Aparelhos):
+3. retornar a realização do exame (passo que será realizado no Sistema dos Aparelhos):
 
 ~~~sql
 update integracao_aparelhos i
@@ -285,10 +286,19 @@ set i.dt_realizacao = '2019-01-15'
 where i.integracao_id = 1;
 ~~~
 
+4. conferir com select * worklist_aparelhos, integracao_aparelhos e agendamento.
 
+---
 
+## Fichário
 
+<em>
+"1. Desenvolva um gatilho (trigger) que insira um registro de garagem coberta para todo apartamento incluído do tipo cobertura.<br>
+2. Desenvolva um gatilho (trigger) que desvalorize o preço do apartamento em 30% quando uma garagem vinculada a ele for excluída."
+</em>
+<br>
 
+> Resolução [aqui](./monicaQuintal_agenda03_ti_iii.pdf).
 
 ---
 
