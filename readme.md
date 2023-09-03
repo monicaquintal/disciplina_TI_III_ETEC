@@ -15,3 +15,4 @@
 1. [Agenda 01: Blocos de Linguagem de Consulta Estruturada.](./agenda01/agenda01.md)
 2. [Agenda 02: Funções.](./agenda02/agenda02.md)
 3. [Agenda 03: Gatilhos.](./agenda03/agenda03.md)
+4. [Agenda 04: Visões Controladas e Permissões.](./agenda04/agenda04.md)
