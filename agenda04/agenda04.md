@@ -137,6 +137,210 @@ drop view cliente_vw;
 
 - depois de definirmos os dados que serão disponibilizados, o próximo passo é dar acesso somente aos usuários que preenchem as regras estabelecidas pelo negócio para visualização desses dados.
 - a Ferramenta WorkBench oferece o recurso para a criação de usuários pela interface gráfica, por meio do Menu Server, opção Users e Privileges, conforme apresentado [aqui](https://www.youtube.com/watch?v=Pdulm9A9JRc).
+- nessa interface, além de criar o usuário, é possível gerenciar os privilégios dele, divididos em 3 (três) categorias:
+
+### a) Account Limits:
+
+- nessa guia são definidos alguns limites para conta que você está criando.
+- exemplo: a quantidade máxima de queries (consultas) que o usuário poderá executar em uma hora, entre outras.
+- max. queries, max. updates, max. corrections, concurrent connections.
+
+### b)  Administrative Roles:
+
+- nessa guia é possível atribuir alguns privilégios administrativos para o usuário.
+- exemplo: DBA (Database Administrator, Administrador do Banco de Dados),
+onde ele terá todos os privilégios para executar todas as ações possíveis em um banco de dados.
+
+### c) Schema Privileges:
+
+- nessa guia é possível atribuir ao usuário um ou vários privilégios a
+determinados Schemas disponíveis no SGBD.
+- significado de alguns privilégios:
+
+<div align="center">
+
+Privilégio | Descrição
+------------|-------------
+ALL [PRIVILEGES] | Todos os privilégios exceto GRANT OPTION
+ALTER | Permite executar ALTER TABLE
+CREATE | Permite executar CREATE TABLE
+CREATE TEMPORARY TABLES | Permite executar CREATE TEMPORARY TABLE
+DELETE | Permite executar DELETE
+DROP | Permite executar DROP TABLE
+EXECUTE | Permite executar stored procedures (MySQL 5.0)
+FILE | Permite executar SELECT ... INTO OUTFILE e LOAD DATA INFILE
+INDEX | Permite executar CREATE INDEX e DROP INDEX
+INSERT | Permite executar INSERT
+LOCK TABLES | Permite executar LOCK TABLES em tabelas que você tenha o privilégio SELECT
+PROCESS | Permite executar SHOW FULL PROCESSLIST
+REFERENCES | Ainda não está implementado
+RELOAD | Permite executar FLUSH
+REPLICATION CLIENT | Permite ao usuário obter a localização do Master ou Slave
+REPLICATION SLAVE | Necessário para a replicação Slave (leitura dos eventos do log binário do Master)
+SELECT | Permite executar SELECT
+SHOW DATABASES | exibe todos os bancos de dados
+SHUTDOWN | Permite executar mysqladmin shutdown
+SUPER | Permite executar CHANGE MASTER, KILL , PURGE MASTER LOGS e SET
+GLOBAL.<br>Permite conectar-se ao servidor uma vez, mesmo que o max_connections tenha sido atingido.
+UPDATE | Permite executar UPDATE
+USAGE | Sinônimo para "no privileges''
+GRANT OPTION | Permite ao usuário repassar os seus privilégios
+
+</div>
+
+## Sintaxe para:
+
+### a) Criar um usuário
+
+~~~sql
+create user 'novousuario'@'localhost' identified by 'password';
+~~~
+
+### b) Excluir um usuário:
+
+~~~sql
+drop user 'novousuario'@'localhost';
+~~~
+
+## Exemplificando:
+
+> demonstração do uso de privilégios [aqui](https://www.youtube.com/watch?v=1UBu2xTCzrg).
+
+- criar um usuário com o nome de 'teste', definindo como senha os números '12345':
+
+~~~sql
+create user teste@localhost identified by '12345';
+~~~
+
+- clicar em Home > MySQL Connections > + > informar Connection Name (Usuario teste), Username (teste) e senha (12345).
+  - após a criação do usuário teste, ele ainda não terá permissão para fazer ações no SGBD.
+  - ao criar uma conexão na Ferramenta Workbench, no quadro Schemas nenhum banco de dados estará disponível, além de não poder criar nenhum.
+
+- para que um usuário possa executar alguma ação no SGBD, ele precisa ter permissão ou privilégios.
+
+### Sintaxe para dar privilégios:
+
+~~~sql
+grant [tipo_de_permissão]
+  on [nome_base_dados].[nome_tabela]
+  to ‘[nome_usuário]’@'localhost’;
+~~~
+
+### Sintaxe para revogar privilégios:
+
+~~~sql
+revoke [tipo_de_permissão]
+  on [nome_base_dados].[nome_tabela]
+  to ‘[nome_usuário]’@'localhost’;
+~~~
+
+### Continuando o exemplo:
+
+- atribuir os privilégios de select e update na view cliente_vw:
+
+~~~sql
+grant select, update on minimercado.cliente_vw to teste@localhost;
+~~~
+
+> IMPORTANTE: Após aplicar algum tipo de privilégio execute o `comando flush privileges`0 para que o MySQL possa atualizar os privilégios que estão em memória.
+
+~~~sql
+flush privileges;
+~~~
+
+- após conceder os privilégios o usuário teste passou a ter acesso ao banco de dados minimercado e a view cliente_vw.
+
+---
+
+## Você no Comando
+
+> utilizar o banco de dados do consultório para desenvolver os exemplos.
+
+<em>
+"Para finalizar o projeto de integração dos Sistemas no Consultório da Dra. Ana Lúcia, Carlos, analista responsável, precisa disponibilizar o acesso dos aparelhos às estruturas worklist_aparelhos e integracao_aparelhos, nelas estão as informações necessárias para que o processo de integração seja executado por completo, trafegando as informações entre os Sistemas.<br>
+Como Carlos fará isso?"
+</em>
+
+- ao analisarmos as estruturas envolvidas podemos chegar as seguintes conclusões:
+
+<div align="center">
+
+Nome da tabela: WORKLIST_APARELHOS
+
+CAMPO | TIPO (Tamanho) | Obrigatório | Padrão | PK | Observação
+------|---------------|-------------|---------|------|---------
+worklist_id | int(6) | sim | &#32; | sim | auto incremento
+agendamento_id | int(6) | sim | &#32; | não | &#32;
+dt_exame | date | sim | &#32; | não | &#32;
+paciente | varchar(80) | sim | &#32; | não | &#32;
+dt_nascimento | date | sim | &#32; | não | &#32;
+convenio | varchar(80) | sim | &#32; | não | &#32;
+procedimento | varchar(100) | sim | &#32; | não | &#32;
+aparelho | varchar(2) | sim | &#32; | não | RX ou US
+integrado | varchar(1) | sim | N | não | &#32;
+
+</div>
+
+- worklist_aparelhos contém os registros dos agendamentos de exames de imagem recepcionados que deverão ser integrados aos aparelhos.
+- neste caso, o Sistema dos aparelhos deverá ter privilégios de select e update
+  - select: para obter os dados do agendamento e carregá-los.
+  - update: para poder alterar o conteúdo do campo integrado de 'N' para 'S', não considerando o registro nas próximas execuções da integração.
+
+<div align="center">
+
+Nome da Tabela: INTEGRACAO_APARELHOS
+
+CAMPO | TIPO (Tamanho) | Obrigatório | Padrão | PK | Observação
+------|------------------|---------|-----------|-----|-----------
+integracao_id | int(6) | sim | &#32; | sim | auto incremento
+worklist_id | int(6) | sim | &#32; | não | &#32;
+dt_realizacao | date | não | &#32; | não | &#32;
+
+</div>
+
+- integracao_aparelhos: utilizada para armazenar os registros dos exames que já foram integrados, e posteriormente, sua realização.
+- o Sistema dos aparelhos deverá ter privilégios de insert e update:
+  - insert: para incluir um registro, confirmando assim que as informações foram carregadas aos aparelhos.
+  - update: para confirmar a realização do exame, preenchendo o conteúdo do campo dt_realizacao.
+
+### Criando um usuário (chamado "teste"):
+
+~~~sql
+create user teste@localhost identified by '12345';
+~~~
+
+### Privilégios as estruturas worklist_aparelhos e integracao_aparelhos:
+
+~~~sql
+grant select, update on consultorio.worklist_aparelhos to teste@localhost;
+grant insert, update on consultorio.integracao_aparelhos to teste@localhost;
+~~~
+
+### Utilizando a view:
+
+- criar uma view sem os campos agendamendo_id e convenio da Tabela worklist_aparelhos, e dar os mesmos privilégios de select
+e update ao usuário aparelho.
+
+~~~sql
+create or replace view worklist_ap as
+  select worklist_id, dt_exame, paciente, dt_nascimento,
+    procedimento, aparelho, integrado
+  from worklist_aparelhos;
+
+grant select, update on consultorio.worklist_ap to aparelho@localhost;
+~~~
+
+---
+
+## Fichário
+
+<em>
+"Utilizar o banco de dados imobiliária para resolver os exercícios.
+
+1. Desenvolva uma view que apresente o nome e o telefone de contato dos síndicos de cada condomínio.
+2. Desenvolva uma view que apresente o total de apartamentos por condomínio.
+3. Crie um usuário e conceda a ele o privilégio de select nas views nos exercícios anteriores."
+</em>
 
 
 
