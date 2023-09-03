@@ -180,8 +180,7 @@ REPLICATION SLAVE | Necessário para a replicação Slave (leitura dos eventos d
 SELECT | Permite executar SELECT
 SHOW DATABASES | exibe todos os bancos de dados
 SHUTDOWN | Permite executar mysqladmin shutdown
-SUPER | Permite executar CHANGE MASTER, KILL , PURGE MASTER LOGS e SET
-GLOBAL.<br>Permite conectar-se ao servidor uma vez, mesmo que o max_connections tenha sido atingido.
+SUPER | Permite executar CHANGE MASTER, KILL , PURGE MASTER LOGS e SET GLOBAL<br>Permite conectar-se ao servidor uma vez, mesmo que o max_connections tenha sido atingido
 UPDATE | Permite executar UPDATE
 USAGE | Sinônimo para "no privileges''
 GRANT OPTION | Permite ao usuário repassar os seus privilégios
@@ -190,7 +189,7 @@ GRANT OPTION | Permite ao usuário repassar os seus privilégios
 
 ## Sintaxe para:
 
-### a) Criar um usuário
+### a) Criar um usuário:
 
 ~~~sql
 create user 'novousuario'@'localhost' identified by 'password';
@@ -342,11 +341,7 @@ grant select, update on consultorio.worklist_ap to aparelho@localhost;
 3. Crie um usuário e conceda a ele o privilégio de select nas views nos exercícios anteriores."
 </em>
 
-
-
-
-
-
+> Resolução [aqui](./monicaQuintal_agenda04_ti_iii.pdf).
 
 ---
 
