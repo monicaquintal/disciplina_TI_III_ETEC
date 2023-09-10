@@ -19,10 +19,11 @@
 ---
 
 <div align="center">
-<a href="https://github.com/monicaquintal" target="_blank"><img align="left" height="70" src="https://www.dropreal.com/br/wp-content/uploads/2021/03/icones_VALENDO.png" /></a>
 <br>
 <h2>Segurança de Sistemas de Informação</h2>
+<a href="https://github.com/monicaquintal" target="_blank"><img align="right" height="80" src="https://www.dropreal.com/br/wp-content/uploads/2021/03/icones_VALENDO.png" /></a>
 </div>
 <br>
 
 - [Agenda 05: Conceitos De Segurança Da Informação.](./agenda05/agenda05.md)
+- [Agenda 06: Segurança Em Redes De Computadores e Dispositivos Móveis.](./agenda05/agenda05.md)

@@ -184,7 +184,7 @@ entendidos caso sejam interceptados por terceiros.
 <br>
 
 Dicas:
-- Para saber se a conversão de um caractere para um número inteiro está correta acesse o site www.asci- itable.com. Ex.: caractere C = 67. Note que letras maiúsculas e minúsculas possuem códigos diferentes logo C ≠ c, c = 99.
+- Para saber se a conversão de um caractere para um número inteiro está correta acesse o site www.asciitable.com. Ex.: caractere C = 67. Note que letras maiúsculas e minúsculas possuem códigos diferentes logo C ≠ c, c = 99.
 - Utilize a função &lt;variável&ht;.length; para determinar o tamanho de uma String, onde variável é um tipo String. Ex.: String a; a.lengh;
 - A conversão de um caractere para um número inteiro da tabela ascii é uma conversão de tipo simples de char para integer.
 - O mesmo vale para a conversão de volta de um número inteiro para caractere na saída final da mensagem criptografada, porém com conversão de integer para char.
