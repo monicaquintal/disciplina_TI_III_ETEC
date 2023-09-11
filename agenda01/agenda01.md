@@ -813,8 +813,6 @@ insert into proprietario_apartamento values (1,'a101','12345678-0'),
 
 2. Desenvolva um procedure de efetivação de compra de apartamento de acordo com o identificador do proprietário comprador e o número do apartamento passados como parâmetro. O processo deverá atribuir ao apartamento o identificador do novo proprietário.
 
-> Resolução da atividade [aqui](./monicaQuintal_agenda01_ti_iii.pdf).
-
 ---
 
 [Voltar ao início!](https://github.com/monicaquintal)

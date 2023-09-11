@@ -298,8 +298,6 @@ where i.integracao_id = 1;
 </em>
 <br>
 
-> Resolução [aqui](./monicaQuintal_agenda03_ti_iii.pdf).
-
 ---
 
 [Voltar ao início!](https://github.com/monicaquintal)

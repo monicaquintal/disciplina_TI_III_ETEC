@@ -341,8 +341,6 @@ grant select, update on consultorio.worklist_ap to aparelho@localhost;
 3. Crie um usuário e conceda a ele o privilégio de select nas views nos exercícios anteriores."
 </em>
 
-> Resolução [aqui](./monicaQuintal_agenda04_ti_iii.pdf).
-
 ---
 
 [Voltar ao início!](https://github.com/monicaquintal)

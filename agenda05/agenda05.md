@@ -195,8 +195,6 @@ Exemplo:
 - Ao entrarmos com a String: “CPS”, o programa deve converter para números, que segundo a tabela ascii ficarão: 67, 80 e 83, somar 10 unidades: 77, 90 e 93 e convertê-los novamente para uma String, resultando em “MZ]”.
 <em>
 
-> Resolução [aqui](./monicaQuintal_agenda05_ti_iii.pdf).
-
 ---
 
 [Voltar ao início!](https://github.com/monicaquintal)
