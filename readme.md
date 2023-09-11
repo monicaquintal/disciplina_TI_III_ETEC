@@ -26,4 +26,4 @@
 <br>
 
 - [Agenda 05: Conceitos De Segurança Da Informação.](./agenda05/agenda05.md)
-- [Agenda 06: Segurança Em Redes De Computadores e Dispositivos Móveis.](./agenda05/agenda05.md)
+- [Agenda 06: Segurança em Redes de Computadores e Dispositivos Móveis.](./agenda06/agenda06.md)
