@@ -154,4 +154,14 @@ problemas de roubo de dados.
 
 ---
 
+## Debate
+
+<em>
+"Com o grande e rápido avanço que a tecnologia digital teve nas últimas duas décadas, continuamente problemas de segurança são descobertos e as suas soluções, ou tentativa delas, são publicadas pelos fabricantes de software e hardware. Um grande exemplo disso é que o Microsoft Windows possui um ciclo de atualizações mensais de segurança, ou se o problema for muito grave, assim que a correção (patch) é terminada ela é disponibilizada por meio do Windows Update.
+<br>
+Debata com os colegas e com o Professor-Mediador sobre como um Técnico da área de Tecnologia da Informação deve proceder para implementar um patch de segurança em uma rede de uma empresa com um grande número de computadores de modo eficiente."
+</em>
+
+---
+
 [Voltar ao início!](https://github.com/monicaquintal)
