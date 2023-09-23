@@ -27,3 +27,4 @@
 
 - [Agenda 05: Conceitos De Segurança Da Informação.](./agenda05/agenda05.md)
 - [Agenda 06: Segurança em Redes de Computadores e Dispositivos Móveis.](./agenda06/agenda06.md)
+- [Agenda 07: Tipos de Invasões e Vulnerabilidades.](./agenda07/agenda07.md)
