@@ -81,17 +81,71 @@ select * from usuario where login = 'admin'-- and password = 'senha';
 ~~~
 
 - esse comando faria com que o banco de dados (BD) conectasse o usuário com a login admin, geralmente utilizado por administradores, com acesso privilegiado. 
-- mesmo sem saber a senha, tendo somente o nome de usuário (login), é possível acessar o BD, pois o comando “--” faz com que o SGBD ignore o resto do comando, no exemplo ignorando a senha. 
-- para prevenir os Injections SQL é fundamental que seja realizado um tratamento nos dados inseridos no sistema: parametrizar as consultas, utilizar “stored procedures” em SQL, limitar os privilégios no acesso ao
-BD, seja por programas desenvolvidos ou por interfaces WEB de modo a garantir que os comandos SQL executados pelo SGBD sejam seguros.
+- mesmo sem saber a senha, tendo somente o nome de usuário (login), é possível acessar o BD, pois o comando "--" faz com que o SGBD ignore o resto do comando, como a senha. 
+- para prevenir os Injections SQL, realizar tratamento nos dados inseridos no sistema: parametrizar as consultas, utilizar "stored procedures" em SQL, limitar os privilégios no acesso ao BD, seja por programas desenvolvidos ou por interfaces WEB, de modo a garantir que os comandos SQL executados pelo SGBD sejam seguros.
 
+## 4. Prevenção de ataques e invasões
 
+### a) Testes de Varredura e análise:
+- varredura e a análise do sistema como um todo, para identificar as  ulnerabilidades do sistema.
+- depois de instalar os firewalls, seja por software ou hardware, e instalar os antivírus, deve-se utilizar programas específicos chamados `scanners` para a varredura de vulnerabilidade na rede. 
+- os scanners analisarão os softwares instalados, a infraestrutura e a políticas de segurança em busca de vulnerabilidades, realizando uma classificação por nível (baixo, médio e alto risco).
+- exemplos de programas que realizam a varredura: netsparker, aconetix,
+openvas, Nexpose e Wireshark.
+- de acordo com o resultado do teste de varredura, o analista de TI realizará a análise dos dados para sanar as vulnerabilidades detectadas, priorizando as mais críticas (alto risco).
 
+### b) Teste de Penetração e vulnerabilidades:
+- dependendo do tamanho da empresa, organização e ramo de atividade, somente a varredura e a análise podem não ser suficientes, pois apenas identifica as vulnerabilidades. 
+- em um `teste de penetração` ou pentest (penetration test), além da identificação da vulnerabilidade, os testadores tentam explorá-la (invadir o sistema), avaliando os danos que a invasão bem sucedida pode causar na empresa, podendo mensurar financeiramente com os sistemas que foram afetados ou paralisados. 
+- costumam ser contratadas empresas terceirizadas para realizar um pentest.
+- um pentest pode ser ***classificado de três formas***:
+  - `White-box`: quando as informações sobre a infraestrutura da empresa são fornecidas, facilitando e otimizando a busca por vulnerabilidades.
+  - `Black-box`: quando nenhum tipo de informação é fornecido e os testes são conduzidos de fora do ambiente da empresa.
+  - `Grey-box`: quando, de dentro da empresa, o testador tenta invadir outros ambientes corporativos internos. Interessante para testar e auditar processos de segurança internos.
+- o processo de um pentest, em geral, conta com os seguintes ***passos***:
+  - 1. `Footprint`:
+    - fase inicial de um pentest.
+    - são pesquisadas informações como endereços de IP, informações de colaboradores das empresas, endereços de correio eletrônico, versões dos softwares ativos na rede, sistemas operacionais utilizados (finger-print) e números de telefones.
+    - muitas dessas informações podem ser descobertas em serviços de busca na internet como Google, Whois etc.
+  - 2. `Varredura e Descoberta`:
+    - nessa fase, o pentester tem um contato direto com o sistema a ser testado utilizando ferramentas de escaneamento de rede como Nmap e ZenMap para identificar portas, serviços ativos, ranges de IP etc.
+  - 3. `Identificação de Vulnerabilidades`:
+    - ferramentas de escaneamento de vulnerabilidades são usadas para detectar possíveis brechas no sistema, como programas de segurança mal configurados ou atualizações de falhas de segurança conhecidas em programas não realizadas.
+  - 4. `Ataque ou Exploração`:
+    - o pentester tentará invadir o sistema por meio das explorações de brechas de segurança conhecidas ou identificadas na fase anterior, sempre tentando passar despercebido pelos administradores de sistema, ocultando os seus rastros.
+  - 5. `Análise de Risco e Remediação`:
+    - após a invasão, os riscos são analisados e são recomendadas as atualizações e/ou modificações nos sistemas, com a devida documentação para o contratante.
+  - 6. `Relatórios`:
+    - elaborado um relatório com a metodologia utilizada, vulnerabilidades encontradas, ataques realizados e correções necessárias.
 
+---
 
+## Exercitando e aprimorando
 
+### 1. Defina Engenharia Social.
+A Engenharia social pode ser definida como um conjunto de métodos psicológicos de persuasão ao usuário, muitas vezes contando com a ingenuidade deste, para ganhar a sua confiança, fazendo com que a vítima revele informações sensíveis para serem utilizadas em um ataque aos sistemas de uma empresa.
 
+### 2. Como funciona um ataque do tipo DDoS?
+Um ataque do tipo DDoS funciona com centenas ou milhares computadores de uma rede “zumbi” infectados com um malware controlado pelo criminoso no qual em uma mesma data e hora atacam um único alvo com o intuito de tentar derrubar o serviço oferecido por este servidor causando a negação de serviço.
 
+### 3. O que é uma SQL Injection?
+Consiste na inserção de um código em linguagem SQL em uma query de um programa ou aplicação WEB, com o intuito de obter dados sigilosos ou ganhar acesso não autorizado para a manipulação de um Banco de Dados.
+
+### 4. Uma Varredura e análise de um sistema é o mesmo que realizar um Pentest?
+- A varredura ou análise do sistema realiza somente uma identificação das vulnerabilidades do sistema testado para que sejam corrigidas. 
+- Já um pentest, além da execução da varredura e análise, também realiza testes de invasão efetiva do sistema, indicando as brechas para a intrusão do sistema.
+
+### 5. O que é Footprint? E Fingerprint?
+- Footprint consiste na análise inicial de um sistema alvo com a intenção de obter dados de forma segura sem ser detectado. Essa investigação inicial inclui pesquisas em mecanismos de busca, consultas ao Whois, visitas as páginas da internet da empresa, saber os domínios e endereços de IP, informações sobre os funcionários da empresa, endereços de e-mail etc.
+- Fingerprint é uma parte do footprint que identifica o sistema operacional e demais softwares do alvo. Para isso, são utilizadas ferramentas de scanner de rede.
+
+---
+
+## Fichario
+
+- Estudamos sobre diversos tipos de ataques que podem ser realizados, tendo as empresas como alvos. Muitos desses ataques podem ter fins políticos, ideológicos ou simplesmente com o intuito de paralisar um serviço ou toda uma empresa. Os ataques do tipo SQL Injection podem ser executados por qualquer pessoa com um pouco de conhecimentos de páginas HTML, PHP, ASP.net, JavaScript e banco de dados pode executar.
+- Para sintetizar os conhecimentos sobre esse tipo de ataque, pesquise, exemplifique e explique passo a passo, como podemos obter dados não autorizados de um BD qualquer utilizando SQL Injection.
+- O exercício deve ser entregue em documento do formato Word no ambiente virtual de aprendizagem. Observação: explique como cada comando em SQL se comporta ao ser executado pelo SGBD.
 
 ---
 
