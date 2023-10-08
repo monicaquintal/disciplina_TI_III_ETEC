@@ -98,6 +98,100 @@
   - código mais simples e organizado.
   - documentação mais clara (componentização).
 
+## 5. Exemplo
+
+- imagine que um programador tenha saído da reunião de planejamento de sprints com o seguinte requisito:
+  - dado um nome e sobrenome, o sistema deverá inverter a ordem, colocando o sobrenome do usuário e depois o nome, assim como acontece com os passaportes, citação de autores em trabalhos científicos e em demais situações.
+  - para isso, o programador irá criar um programa de teste com o nome “trocaNomes”.
+
+<div align="center">
+<img src="./assets/exemplo-rotina-teste-troca-nome.png" width="50%"><br>
+<p><em>Rotina de teste para a função trocaNomes().</em></p>
+<br>
+</div>
+
+- assim funciona um teste unitário do TDD – fazer uma rotina ou classe do método que o programador ainda irá construir.
+- observamos que:
+  - a rotina falhou na primeira execução porque ainda não existia a codificação.
+  - a rotina de teste passou a funcionar porque o código foi programado corretamente.
+  - depois o programador codificou o futuro programa; dessa forma, consegue testar o funcionamento da rotina do seu sistema, por meio do programa de teste.
+- além de tudo, os programas testes auxiliam na documentação do sistema, pois nele o programador está expressando exatamente aquilo que deverá ser implementado e os resultados almejados para o sistema.
+
+## 6. Vantagens em adotar o TDD:
+
+### a) `Design e Manutenibilidade`: 
+- quando o TDD guia a implementação de um software, esse software terá um desenho menos complexo e com características altamente modularizáveis, porque será forçado a escrever códigos limpos e desacoplados, evitando possíveis erros antes que chegue ao usuário final.
+
+### b) `Confiança`: 
+- rotinas já testadas. 
+- confiança para fazer alterações no código sem temer que possa acontecer algum problema.
+
+### c) Documentação: 
+- as descrições que são escritas nos testes documentam os requisitos que foram
+implementados.
+
+### d) Redução de bugs em produção: 
+- estudos comprovam que a prática do TDD, além dos benefícios mencionados, impacta de 40 a 80% de redução dos bugs em produção.
+
+<div align="center">
+<img src="./assets/ciclo-tdd.png" width="50%"><br>
+<p><em>Ciclo de um TDD.</em></p>
+<br>
+</div>
+
+- O `processo de desenvolvimento com TDD` é sempre: Red, Green e Refactor.
+
+### a) Red:
+- o primeiro passo é escrever um teste que falha.
+- escrevemos o programa teste primeiro para depois escrever realmente as rotinas do sistema que se pretende desenvolver.
+- depois execute o teste e acompanhe a falha. 
+- pode ser um código falso mesmo que retorne o erro. 
+
+### b) Green:
+-  desenvolva primeiro a solução mais simples, depois teste novamente e se o teste não passar/der errado, retorne à etapa anterior.
+
+### c) Refactor:
+- refatore a funcionalidade e agora escreva-a por completo. 
+- nessa etapa, elimine redundância e acoplamentos deixando o design do código mais limpo e legível.
+- e pronto! Passe para a próxima funcionalidade iniciando um novo teste!
+
+## 7. TESTES DE SOFTWARE COM O METODOLOGIA SCRUM NA LINHA DE FRENTE
+
+- dentro de um time scrum, todos são responsáveis por tudo, ou seja, os papéis são compartilhados, portanto a responsabilidade não é apenas dos analistas de testes, mas de todo o time.
+- no Scrum, todos são testers e todos são desenvolvedores.
+- em oposição à metodologia tradicional, onde as especificações e requisitos dirigem os testes, no Scrum os testes são aplicados com maior ênfase nas partes que mais geram valor para o produto.
+- a equipe segmenta o projeto em pequenas features/tasks, aumentando a compreensão sobre a utilidade e prioridade dos itens, visto que a divisão em pequenos pedaços instiga a criticar sobre a contribuição de cada um para o todo.
+
+> “Não pense em todo o produto! "Vá por partes!"
+
+- assim, a decisão do time sobre o que deveria ser priorizado torna-se mais assertiva, já que tem a ciência de que aquilo que foi e que seria testado contribuiria para o projeto.
+
+## 8. QUAIS FERRAMENTAS UTILIZAR PARA IMPLEMENTAR O PROCESSO DE TDD AO DESENVOLVIMENTO?
+
+- não existe uma perspectiva das melhores ou piores ferramentas e/ou linguagens. 
+- é possível usar qualquer linguagem de programação para fazer os programas testes, escolhendo a opção mais próxima da sua realidade de conhecimento e habilidades técnicas dentro da sua equipe. 
+- no entanto, existem diversas ferramentas que nos fazem ganhar mais tempo. 
+-  exemplos para diferentes linguagens:
+  - ***JUnit***: framework de teste para Java, permite a criação de testes unitários. Disponível como plug-in para os mais diversos IDE'S como Eclipse, Netbeans etc.
+  - ***TesteNG***: ferramenta de teste unitária disponível para Java.
+  - ***PHPUnit***: Framework XUnit para teste unitário em PHP, também é possível integrar aos IDE's assim como o JUnit.
+  - ***SimpleTest***: outra ferramenta para realização de teste para PHP. Além de possibilitar os testes unitários, é possível realizar MOCKS e outros testes.
+  - ***NUnit***: Framework de teste no molde XUnit para a plataforma .NET.
+  - ***Jasmine***: Framework para teste unitário de JavaScript.
+  - ***CUnit***: Ferramenta para os testes unitários disponível para Linguagem C.
+  - ***PyUnit***: Framework Xunit para testes na linguagem Python.
+
+### Importante:
+
+- as ferramentas de gerenciamento podem ser utilizadas em todas as etapas do ciclo de vida do teste.
+- têm como vantagem a centralização de todas as informações relacionadas à evolução dos testes realizados no software, permitindo que  nformações sejam coletadas e acompanhadas, possibilitando uma visão mais ampla para a tomada de decisão, fornecendo artefatos de acordo com os interesses e expectativas.
+
+> Recomendado aprofundamendo dos conhecimentos nas ferramentas [JUnit](https://www.youtube.com/watch?v=V2I-XnesC3A) e [PHPUnit](https://www.devmedia.com.br/teste-unitario-com-phpunit/41231).
+
+---
+
+## Fichário
+
 
 
 
