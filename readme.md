@@ -30,3 +30,17 @@
 - [Agenda 07: Tipos de Invasões e Vulnerabilidades.](./agenda07/agenda07.md)
 - [Agenda 08: Qualidade de Software.](./agenda08/agenda08.md)
 - [Agenda 09: Testes de Software.](./agenda09/agenda09.md)
+
+---
+
+<div align="center">
+<br>
+<h2>Sistemas Embarcados - Arduino</h2>
+<a href="https://github.com/monicaquintal" target="_blank"><img align="right" height="80" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/arduino/arduino-original-wordmark.svg" /></a>
+</div>
+<br>
+
+- [Agendas 10 e 11: Módulo I - Estruturas Básicas.](./agendas10e11/agendas10e11.md)
+
+
+
