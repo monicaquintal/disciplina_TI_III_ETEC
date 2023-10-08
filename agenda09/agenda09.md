@@ -208,6 +208,7 @@ As funções básicas do sistema devem incluir as funções de Inserir, Deletar,
 <br>
 Levando em conta que esses tipos de dados são obrigatórios, analise as informações e responda:
 <br>
+
 - O que deve ser testado nos campos e quais os tipos de teste que devemos fazer?
 - O que deve ser testado nas funções e quais os tipos de teste que devemos fazer?"
 </em>
