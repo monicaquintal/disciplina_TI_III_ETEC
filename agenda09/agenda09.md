@@ -195,6 +195,7 @@ implementados.
 <em>
 "Uma empresa solicita um sistema para realizar o cadastro de informações de usuários com os seguintes dados: Nome completo, endereço, data de nascimento, profissão, RG, CPF.
 <br>
+
 Abaixo seguem as especificações de cada campo:
 - Nome completo (VARCHAR 80)
 - Endereco (Varchar 120)
