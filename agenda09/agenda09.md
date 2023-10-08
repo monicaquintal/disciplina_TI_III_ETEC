@@ -64,7 +64,41 @@
 - imprevisivelmente, a sobrecarga pode acontecer durante a utilização, gerando o que chamamos “estresse”. 
 - para descobrir o nível de tensão capaz de levar o software a parar de funcionar, é executado o teste de estresse, que consiste em simular eventos de carga excessiva, forçando o software ao extremo.
 
-### f) 
+### f) Teste de Estabilidade:
+- a partir do momento em que se planeja construir um software para o cliente, é necessário que o produto final apresente certa estabilidade, condizente com a carga de trabalho a ser suportada diariamente.
+- o ideal é que o software não sofra perda de performance depois de determinado tempo de uso.
+
+### g) Teste de Regressão:
+- é uma metodologia usada, entre outras coisas, para evitar a recorrência de um erro.
+- exemplo: quando o programador modifica o código, seja para eliminar um bug ou acrescentar funcionalidades, e procura identificar falhas até então inexistentes.
+- isso pode acontecer em função de problemas previamente corrigidos em uma versão anterior. 
+- o teste de regressão é essencial para impedir que um sistema, após um update, assim que as atualizações forem instaladas, fique instável.
+
+### h) Teste de Segurança:
+-  é um dos mais importantes da lista, sobretudo quando falamos em software corporativo. 
+- a proteção dos dados é imprescindível a toda e qualquer empresa que armazena informações no ambiente virtual — que é repleto de ameaças.
+- esse teste é realizado por uma equipe especializada em Segurança da Informação, incumbida de avaliar se há brechas de segurança a partir de procedimentos, como análise de vulnerabilidade, coleta de informações e violação de senha.
+- dessa maneira, o produto final só é entregue ao cliente quando os requisitos de segurança são devidamente preenchidos, garantindo à empresa que suas informações ficarão protegidas contra invasão cibernética.
+
+## 4. TDD - TEST DRIVEN DEVELOPMENT / DESENVOLVIMENTO ORIENTADO A TESTE
+
+- é parte da metodologia XP (Extremme Programming), também utilizado em diversas outras metodologias, além de poder ser utilizada livremente.
+- o TDD transforma o desenvolvimento, pois deve-se primeiro escrever os testes, antes de implementar o sistema. 
+- os testes são utilizados para facilitar no entendimento do projeto, usados para clarear a ideia em relação ao que se deseja em relação ao código.
+- é a forma de "separar o projeto lógico do físico".
+- a criação de teste unitários ou de componentes é parte crucial para o TDD. 
+
+> "Os componentes individuais são testados para garantir que operem corretamente. Cada componente é testado independentemente, sem os outros componentes de sistema. Os componentes podem ser entidades simples, como funções ou classes de objetos, ou podem ser grupos coerentes dessas entidades.
+
+- não é só o teste unitário que vai trazer o sucesso à aplicação, é necessário testar o sistema como um todo.
+- "Os componentes são integrados para compor o sistema. Esse processo está relacionado com a busca de erros que resultam das interações não previstas entre os componentes".
+- um sistema é um conjunto de unidades integradas, por este motivo é importante os testes unitários para ver se no micromundo tudo funciona, mas também temos de testar a integração, ou seja, ao integrar dois ou mais componentes, devemos realizar testes para verificar se a integração funciona.
+- ***o que se ganha com isso?*** 
+  - qualidade no código.
+  - código mais simples e organizado.
+  - documentação mais clara (componentização).
+
+
 
 
 
