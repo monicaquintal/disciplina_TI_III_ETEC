@@ -192,14 +192,24 @@ implementados.
 
 ## Fichário
 
-
-
-
-
-
-
-
-
+<em>
+"Uma empresa solicita um sistema para realizar o cadastro de informações de usuários com os seguintes dados: Nome completo, endereço, data de nascimento, profissão, RG, CPF.
+<br>
+Abaixo seguem as especificações de cada campo:
+- Nome completo (VARCHAR 80)
+- Endereco (Varchar 120)
+- Data de Nascimento (DATE)
+- Profissao ( varchar 50)
+- RG (numerico 12)
+- CPF (numerico 12)
+<br>
+As funções básicas do sistema devem incluir as funções de Inserir, Deletar, Consultar e Atualizar as informações.
+<br>
+Levando em conta que esses tipos de dados são obrigatórios, analise as informações e responda:
+<br>
+- O que deve ser testado nos campos e quais os tipos de teste que devemos fazer?
+- O que deve ser testado nas funções e quais os tipos de teste que devemos fazer?"
+</em>
 
 ---
 
