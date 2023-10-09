@@ -67,11 +67,90 @@
 
 ---
 
-<div id="agendas10e11">
+<div align="center">
 <h2>Módulo I - Estruturas Básicas.</h2>
 </div>
 
-## 1. Introdução
+## 1. [Introdução](https://www.youtube.com/watch?v=5CrIR7qwpOU)
+
+### a) O que é o Arduino?
+- pequeno computador com hardware limitado (consome pouca energia elétrica), livre e de placa única.
+- é uma plataforma de prototipagem.
+- trabalha com código aberto.
+- programação em C (mais rústica, comando simples de serem trabalhados).
+- pode ser utilizado por qualquer pessoa interessada em produzir equipamento eletrônico de automação.
+
+### b) Estrutura:
+
+<div align="center">
+<img src="./assets/images/estrutura-arduino.png" width="50%">
+<p><em>Placa do Arduino.</em></p><br>
+</div>
+
+1. ***Pinos digitais***:
+  - tensão de 5V.
+  - funciona como entrada ou como saída de dados.
+  - trabalha com dados binários: 0 (low - 0V) ou 1 (High - 5V).
+  - exemplo: se ligar um LED num pino digital, ele acende e apaga.
+
+2. ***Pinos digitais PWM***:
+  - tensão de 5V.
+  - funciona como entrada ou como saída de dados.
+  - trabalha com variação de sinais digitais entre 0 e 255.
+  - exemplo: se ligar um LED num pino digital PWM, é possível fazerf uma variação da tensão enviada, e o LED vai aumentando ou diminuindo a luminosidade de acordo com o comando.
+  - precisam ser programadas para que enviem o sinal.
+
+3. ***Pinos analógicos***:
+  - funcionam apenas como entradas de sinal.
+  - quando recebem 5V, o valor da conversão para digital será de 1023, ou seja, é possível ober uma variação de 0 a 1023.
+
+4. ***Botão de Reset***:
+  - permite que toda programação implementada pelo usuário (chamada "latente") na placa seja apagada.
+
+5. ***Conector USB***:
+  - faz ligação do computador com a placa Arduino.
+  - permite a gravação de programas e fornece alimentação elétrica para o funcionamento da placa.
+
+6. ***Conector de alimentação***:
+  - permite a alimentação da placa por fonte ou bateria pelo pino Jack.
+
+7. ***Pinos de alimentação*** (portas):
+  - **RES**: conectado ao pino Reset; pode ser utilizado para um reset externo da placa (apaga toda a menmória da placa).
+  - **3.3V**: fornece tensão de 3,3V para alimentação de shield e módulos externos. Diferente dos pinos digitais, já há alimentação direta na placa, sem se preocupar com a programação.
+  - **5V**: fornece tensão de 5V para alimentação de shield e circuitos externos. Diferente dos pinos digitais, já há alimentação direta na placa, sem se preocupar com a programação.
+  - **GND**: terra (negativo) - dias embaixo e uma ao lado da porte 13 digital, em cima da placa.
+  - **VIN**: alimentação da placa através de shield ou bateria externa. Se alimentada pelo pino Jack, a tensão da fonte estará nesse pino.
+
+## 2. [Protoboard](https://youtu.be/ISTSIdiP2jw):
+
+### a) Multímetro:
+- tem a capacidade de medir as ***grandezas elétricas***:
+  - tensão elétrica - Volts (V).
+  - corrente elétrica - Amperes (A).
+  - resistência elétrica - Ohms (Ω).
+- o multímetro possui um seletor, onde escolhemos o que desejamos medir (e medições básicas: VOLTS DC, AMPERES DC, VOLTS AC e OHMS).
+- possui as pontas de prova (conectores externos ao multímetro que farão a conexão entre o local da medição e o multímetro) e bornes (onde conecta as pontas de prova).
+- observação: 
+  - AC ou CA (corrente alternada ~).
+  - CC (corrente contínua =).
+
+<div align="center">
+<img src="./assets/images/formas-medicao-multimetro.png" width="50%">
+<p><em>Formas de medição do multímetro.</em></p><br>
+</div>
+
+### b) Protoboard:
+- uma placa de ensaio ou matriz de contato.
+- é uma placa com furos e conexões condutoras para montagem de circuitos elétricos experimentais.
+- a grande vamtagem da placa de ensaio na montagem de circuitos eletrônicos é a facilidade de inserção de componentes, uma vez que não necessita de soldagem.
+- placa de circuito impresso (PCI): é a placa definitiva, feita após o protótipo realizado no protoboard! Nela, são criadas as trilhas e soldados componentes, sendo definitiva.
+
+<div align="center">
+<img src="./assets/images/exemplo-ligacao-arduino.png" width="50%">
+<p><em>Exemplos de usos do Protoboard.</em></p><br>
+</div>
+
+## 3. [LED, resistores e potenciômetro](https://youtu.be/aajFyefjleY)
 
 
 
