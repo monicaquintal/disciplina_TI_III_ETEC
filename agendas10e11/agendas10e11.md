@@ -135,7 +135,7 @@
   - CC (corrente contínua =).
 
 <div align="center">
-<img src="./assets/images/formas-medicao-multimetro.png" width="50%">
+<img src="./assets/images/formas-medicao-multimetro.png" width="70%">
 <p><em>Formas de medição do multímetro.</em></p><br>
 </div>
 
@@ -146,11 +146,61 @@
 - placa de circuito impresso (PCI): é a placa definitiva, feita após o protótipo realizado no protoboard! Nela, são criadas as trilhas e soldados componentes, sendo definitiva.
 
 <div align="center">
-<img src="./assets/images/exemplo-ligacao-arduino.png" width="50%">
+<img src="./assets/images/exemplo-ligacao-arduino.png" width="70%">
 <p><em>Exemplos de usos do Protoboard.</em></p><br>
 </div>
 
 ## 3. [LED, resistores e potenciômetro](https://youtu.be/aajFyefjleY)
+
+### a) Resistores:
+
+- componentes que têm por finalidade oferecer uma oposição (resistência elétrica - unidade ohm Ω) à passagem de corrente elétrica, através de seu material.
+- causam queda de tensão em um circuito elétrico e limitma a corrente.
+- é possível utilizar os resistores para controlas a corrente elétrica sobre os componentes desejados (provocam diferença de potencial).
+- Lei de Ohm = V (tensão) = R (resistência) * I (intensidade).
+
+<div align="center">
+<img src="./assets/images/codigo-de-cores-resistores.png" width="50%">
+<p><em>Código de cores dos Resistores.</em></p><br>
+</div>
+
+- normalmente utilizamos resistores de 4 e 5 faixas.
+  - 1ª e 2ªs faixas: algarismo. (1 a 3, caso seja de 5 faixas)
+  - 3ª faixa: multiplicador (4, caso seja de 5 faixas).
+  - 4ª faixa: tolerância (5, caso seja de 5 faixas). 
+
+### b) Potenciômetro:
+
+- componente eletrônico usado para variar a resistência.
+- pode ser definido como um tipo especial de resistor, pois é uma resistência elétrica variável (resistor variável).
+- possui uma trilha de carvão que, dependendo da posição do cursor (W), determinará uma resistência.
+
+<div align="center">
+<img src="./assets/images/potenciometro.png" width="70%">
+<p><em>Potenciômetro.</em></p><br>
+</div>
+
+- usado para controlar a intensidade da luminosidade de uma lâmpada, por exemplo (dimmer), controlar a velocidade do ventilador, volume de rádio.
+
+### c) LED (Light Emitting Diode ou Diodo Emissor de Luz):
+
+- a intensidade da luz produzida pelo Led é diretamente proporcional à corrente que flui através dele.
+- o anodo (+) do Led pode ser identificado pelo terminal mais longo do Led.
+- o catodo (-) do Led é o terminal menor e também possui um chanfro (marca chata).
+- a cor da luz emitida depende do material utilizado no cristal e também do nível de dopagem.
+- os LEDs suportam, normalmente, no máximo 2V / 20mA (momento que calcularemos com a resistência que utilizaremos no LED, para não queimá-lo - exemplificado a partir de 10 min [no vídeo](https://www.youtube.com/watch?v=aajFyefjleY)).
+
+## 4. [Introdução à lógica de programação](https://www.youtube.com/watch?v=1LvvZek7LXY)
+
+
+
+
+
+
+
+
+
+
 
 
 
