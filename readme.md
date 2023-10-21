@@ -40,7 +40,7 @@
 </div>
 <br>
 
-- [Agendas 10 e 11: Módulo I - Estruturas Básicas.](./agendas10e11/agendas10e11.md)
+- [Agenda 10: Módulo I - Estruturas Básicas.](./agenda10/agenda10.md)
 
 
 

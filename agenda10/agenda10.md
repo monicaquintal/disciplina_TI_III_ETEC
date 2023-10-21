@@ -5,7 +5,7 @@
 <p>Tecnologia da Informação III - ETEC</p>
 </div>
 
-<div id="agendas10e11">
+<div id="agenda10">
 <h2>Agendas 10 e 11: Módulo I - Estruturas Básicas.</h2>
 </div>
 
@@ -62,7 +62,7 @@
 ## 3. Baixando:
 
 - se tiver o Kit Arduino Uno e o protoboard, você pode elaborar os projetos fisicamente. 
-- caso não tenha, também poderá elaborar todos os experimentos do curso, utilizando o [simulador de Arduino Uno on-line](https://youtu.be/6pvwCNw3zao).
+- caso não tenha, também poderá elaborar todos os experimentos do curso, utilizando o [simulador de Arduino Uno on-line](https://youtu.be/6pvwCNw3zao): [TinkerCad](https://www.tinkercad.com/).
 - disponibilizada [apostila](./assets/apostila_Arduino.pdf) para estudos.
 
 ---
@@ -192,26 +192,187 @@
 
 ## 4. [Introdução à lógica de programação](https://www.youtube.com/watch?v=1LvvZek7LXY)
 
+### a) Lógica de programação:
 
+  - problema inicial = automação de um processo.
+  - algoritmo = modelo lógico e eletrônico.
+  - ambiente + linguagem = IDE + linguagem PROCESSING, baseada na linguagem C.
+  - solução!
 
+### b) Estrutura de programação para o Arduino:
 
+- `Sketch`: 
+  - é um programa (conjunto de instruções em uma linguagem, nesse caso, chamada processing).
+  - possui 2 rotinas principais em seu modelo:
+    - `inicialização`: inicialização de postas e componentes.
+    - `looping infinito`: contém o conjunto principal de comandos.
+  - enquanto não substituir o sketch na memória interna do Arduino, ele continuará executando esses mesmos processos dentro da mesma ordem!
 
+~~~
+// inicialização:
 
+void setup()
+{
+  configurações do ambiente físico do Arduino
+}
 
+// loop infinito:
 
+void loop() {
+  instruções de execução do projeto
+  o que queremos que processe durante seu funcionamento
+  metodologia top-down: ocorre na ordem de leitura, de cima para baixo!
+}
+~~~
 
+## 5. [Estruturas de programação](https://www.youtube.com/watch?v=9pDKzc4H1Vo)
 
+### a) Exemplo de estrutura de programação para piscar um LED (aceso e apagado):
 
+~~~
+void setup() 
+{
+  pinMode(13, OUTPUT); 
+    // ou seja, porta/pino n° 13 confugurado como saída (output)
+}
 
+void loop() 
+{
+  digitalWrite(13, HIGH);
+    // HIGH, sinal 1
+  delay(1000);
+  digitalWrite(13, LOW);
+    // LOW, sinal 0
+  delay(1000);
+}
+~~~
 
+## 6. [Instruções de entrada e saída](https://www.youtube.com/watch?v=FyNjgKS78XY)
 
+### a) Exemplo:
 
+~~~
+void setup() 
+{
+  pinMode(13, OUTPUT); 
+  Serial.begin(9600);
+}
 
+void loop() 
+{
+  digitalWrite(13, HIGH);
+  delay(1000);
+  digitalWrite(13, LOW);
+  delay(1000);
+}
+~~~
 
+### b) Como esses comandos agirão?
 
+- o Arduino possui portas de comunicação chamas **pinos** (digitai ou analógicos), responsáveis por conectar o programa aos componentes físicos.
 
+~~~
+pinMode(numero, entrada/saída)
+~~~
 
+- exemplos:
 
+~~~
+// push button (pino 7)
+pinMode(7, INPUT)
+
+// LED (pino 8)
+pinMode(8, OUTPUT)
+
+//digitalWrite = saída (HIGH/LOW)
+~~~
+
+## 7. [Ambiente de desenvolvimento de Arduino](https://www.youtube.com/watch?v=dFktfWuO0SY)
+
+- acessar o [site oficial do Arduino](https://www.arduino.cc/).
+- baixar o Software na aba de mesmo nome.
+
+## 8. [Experimento 1: Acendendo e piscando um LED](https://www.youtube.com/watch?v=kBmgG4gmGaw)
+
+### a) O que será utilizado?
+
+- placa do Arduino.
+- uma placa Protoboard.
+- um LED (neste caso, vermelho).
+- um resistor (neste caso, de 330Ω).
+- dois cabos de jumper.
+
+### b) Acendendo um LED:
+
+- no simulador, posicionar os equipamentos e componentes.
+- calcular o valor da resistência:
+  - a placa trabalha com 5V, e o LED, 2V. Se ligar diretamente o LED na placa, queimará. Por isso é colocado o resistor:
+  - cálculo: R (resistência) = V (tensão) / I (corrente) -> R = (5V - 2V) / 20mA ou 0,02A -> R = 3 / 0,02 -> R = 150Ω.
+- ligar o catodo do LED ao terra (GND), e o anodo à porta 13.
+- ajustar a programação em bloco!
+
+<div align="center">
+<img src="./assets/images/acendendo-um-LED.png" width="70%">
+<p><em>Acendendo um LED.</em></p><br>
+
+<img src="./assets/images/acendendo-um-LED-programacao.png" width="70%">
+<p><em>Programação na IDE, para o exemplo de acender um LED (caso o experimento seja feito fora do simulador, com o equipamento).</em></p><br>
+</div>
+
+### c) Piscando um LED:
+
+<div align="center">
+<img src="./assets/images/piscando-um-LED.png" width="70%">
+<p><em>Piscando um LED.</em></p><br>
+
+<img src="./assets/images/piscando-um-LED-programacao.png" width="70%">
+<p><em>Programação na IDE, para o exemplo de piscar um LED (caso o experimento seja feito fora do simulador, com o equipamento).</em></p><br>
+</div>
+
+## 9. [Experimento 2: LED com comando](https://www.youtube.com/watch?v=Tzan4_BxH2Y)
+
+### a) O que será utilizado?
+
+- mesmos componentes do exemplo anterior:
+  - placa do Arduino.
+  - uma placa Protoboard.
+  - um LED (neste caso, vermelho).
+  - um resistor (neste caso, de 330Ω).
+  - dois cabos de jumper e...
+- 1 chave tátil ou push button.
+- resistor de 10kΩ.
+- 3 jumpers.
+
+### b) Experimento:
+
+- tirar o jumper verde do exemplo anterior, e ligá-lo do terra (GND) ao negativo da Protoboard.
+- ligar o jumper do negativo da Protoboard ao catodo do LED.
+- inserir o push button e o novo resistor, ligá-los ao terra e à porta 7.
+- iniciar a programação:
+  - criar a variável Botao.
+  - selecionar Blocks + Text.
+  - criar a programação conforma abaixo.
+
+<div align="center">
+<img src="./assets/images/LED-com-comando.png" width="70%">
+<p><em>LED com comando/push button.</em></p><br>
+
+<img src="./assets/images/LED-com-comando-programacao.png" width="70%">
+<p><em>Programação do LED com comando/push button.</em></p><br>
+</div>
+
+---
+
+## Fichário
+
+<p><em>
+
+"Enviar no word, em um único arquivo as imagens dos experimentos 1 e 2 no simulador ou no Arduino, e os códigos programados neste mesmo arquivo, sem compactar. 
+
+- Experimento 1 - Acendendo e piscando um LED
+- Experimento 2 - LED com comando"
+
+</p></em>
 
 ---
 
