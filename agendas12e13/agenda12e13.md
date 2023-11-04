@@ -9,7 +9,7 @@
 <h2>Agendas 12 e 13: Módulo II - Chaveamento.</h2>
 </div>
 
-## 1. Buzzer e Push Button
+## 1. [Buzzer e Push Button](https://www.youtube.com/watch?v=5PWCLcb4jSI)
 
 ### a) Buzzer:
 - componente eletrônico.
@@ -25,7 +25,7 @@
   - a força para **acionar um botão** é sempre exercida no mesmo sentido.
   - a força para **acionar um interruptor** varia em função do estado atual e do estado pretendido.
 
-## 2. Estruturas de decisão
+## 2. [Estruturas de decisão](https://www.youtube.com/watch?v=BjpkdrKN2gg)
 
 ### a) Desvio condicional:
 - permite que você construa uma sequência de instruções, onde cada instrução ocorrerá dependendo de uma ação específica (condição verdadeira ou falsa).
@@ -57,7 +57,7 @@ else
 }
 ~~~
 
-## 3. Estruturas de repetição (vetores e comandos de repetição)
+## 3. [Estruturas de repetição (vetores e comandos de repetição)](https://www.youtube.com/watch?v=JcS2mkhGqfY)
 
 ### a) Vetor:
 - é um tipo de agregação de valor em variável.
@@ -122,7 +122,7 @@ void loop()
 
 ## 4. Experimentos
 
-### a) Experimento 3 - Semáforo.
+### a) [Experimento 3 - Semáforo](https://www.youtube.com/watch?v=yNOgR8xYZco).
 - serão necessários: placa arduino, protoboard, 3 resistores, 3 leds (vermelho, verde e amarelo) e 7 cabos jumper.
 
 ~~~
@@ -147,7 +147,7 @@ void loop()
 }
 ~~~
 
-### b) Experimento 4 - Piano.
+### b) [Experimento 4 - Piano](https://www.youtube.com/watch?v=kuY-PG4K7jw).
 - serão necessários: placa arduino, protoboard, 4 push buttons, 4 LEDs, buzzer.
 
 ~~~
