@@ -5,7 +5,7 @@
 <p>Tecnologia da Informação III - ETEC</p>
 </div>
 
-<div id="agenda10">
+<div id="agendas10e11">
 <h2>Agendas 10 e 11: Módulo I - Estruturas Básicas.</h2>
 </div>
 
