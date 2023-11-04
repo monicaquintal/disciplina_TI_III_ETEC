@@ -41,6 +41,7 @@
 <br>
 
 - [Agenda 10: Módulo I - Estruturas Básicas.](./agenda10/agenda10.md)
-
-
+- [Agenda 11: Módulo II - Chaveamento.](./agenda11/agenda11.md)
+- [Agenda 12: Módulo III - Sensores.](./agenda12/agenda12.md)
+- [Agenda 13: Módulo IV - Motores.](./agenda13/agenda13.md)
 
