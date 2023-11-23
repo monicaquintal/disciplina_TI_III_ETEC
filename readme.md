@@ -1,6 +1,6 @@
 <div align="center">
 <h1>Tecnologia da Informação III - ETEC</h1>
-<p>Repositório para atividades estudadas e desenvolvidas ao longo da disciplina no 3° semestre.</p>
+<p>Repositório para atividades estudadas e desenvolvidas ao longo da disciplina no 3° semestre</p>
 </div>
 
 ---
