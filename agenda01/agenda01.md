@@ -10,7 +10,7 @@
 <h2>Agenda 01: Blocos de Linguagem de Consulta Estruturada.</h2>
 </div>
 
-> Durante os estudos vamos acompanhar o desenvolvimento de uma integração entre dois sistemas. O MySQL possui vários recursos que auxiliarão nesse projeto, a programação realizada diretamente no banco de dados, agrupando instruções de acordo com as necessidades do negócio com certeza é um deles.
+> Durante os estudos vamos acompanhar o desenvolvimento de uma integração entre dois sistemas! O MySQL possui vários recursos que auxiliarão nesse projeto, a programação realizada diretamente no banco de dados, agrupando instruções de acordo com as necessidades do negócio com certeza é um deles.
 
 ## Importante:
 
