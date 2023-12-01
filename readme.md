@@ -7,7 +7,7 @@
 
 <div align="center">
 <a href="https://github.com/monicaquintal" target="_blank"><img align="right" height="90" src="https://observatoriodabicicleta.org.br/uploads/2020/09/bancos-de-dados-nova-600.png" /></a>
-<h2>Banco de Dados</h2>
+<h2>Banco de Dados.</h2>
 <br>
 </div>
 
@@ -20,7 +20,7 @@
 
 <div align="center">
 <br>
-<h2>Segurança de Sistemas de Informação</h2>
+<h2>Segurança de Sistemas de Informação.</h2>
 <a href="https://github.com/monicaquintal" target="_blank"><img align="right" height="80" src="https://www.dropreal.com/br/wp-content/uploads/2021/03/icones_VALENDO.png" /></a>
 </div>
 <br>
@@ -35,7 +35,7 @@
 
 <div align="center">
 <br>
-<h2>Sistemas Embarcados - Arduino</h2>
+<h2>Sistemas Embarcados - Arduino.</h2>
 <a href="https://github.com/monicaquintal" target="_blank"><img align="right" height="80" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/arduino/arduino-original-wordmark.svg" /></a>
 </div>
 <br>
